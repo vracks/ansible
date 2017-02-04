@@ -1,0 +1,6 @@
+---
+- hosts: testing
+  remote_user:  root
+  roles:
+  - git
+  - docker 

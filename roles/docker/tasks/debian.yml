@@ -1,0 +1,14 @@
+- name: Setting docker repo to install docker
+  apt_repository:
+   repo: deb https://apt.dockerproject.org/repo ubuntu-{{docker_ubuntu_version}} main
+   update_cache: yes
+   state: present
+  tags: [docker]
+
+- name: Installing docker engine
+  apt:
+   name: docker-engine
+   state: latest
+   force: yes
+  tags: [docker]
+
